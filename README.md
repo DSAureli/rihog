@@ -3,7 +3,7 @@
 Vectorized PyTorch implementation of *[M. Cheon et al., Rotation Invariant Histogram of Oriented Gradients, International Journal of Fuzzy Logic and Intelligent Systems, vol. 11, no. 4, December 2011](https://doi.org/10.5391/IJFIS.2011.11.4.293)*.
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/DSAureli/rihog/refs/heads/main/res/A914ka8p9_81c23c_44c.jpg" width="50%"/>
+	<img src="https://raw.githubusercontent.com/DSAureli/rihog/refs/heads/main/res/A9eazdbg_81c239_44c.jpg" width="50%"/>
 	<img src="https://raw.githubusercontent.com/DSAureli/rihog/refs/heads/main/res/A914ka8p9_81c23c_44c.jpg" width="50%"/>
 </p>
 
