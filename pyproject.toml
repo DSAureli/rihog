@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling == 1.27.*"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rihog"
+version = "1.0"
+authors = [
+	{name="Davide Nanni"}
+]
+description = "Vectorized PyTorch implementation of the Rotation Invariant Histogram of Oriented Gradients."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+classifiers = [
+	"Development Status :: 5 - Production/Stable",
+	"Environment :: GPU",
+	"Intended Audience :: Science/Research",
+	"License :: OSI Approved :: MIT License",
+	"Operating System :: OS Independent",
+	"Programming Language :: Python :: 3 :: Only",
+	"Topic :: Scientific/Engineering :: Image Processing",
+]
+requires-python = ">= 3.11"
+dependencies = [
+	"einops",
+	"torch"
+]
+
+[project.urls]
+Homepage = "https://github.com/DSAureli/rihog"
+Issues = "https://github.com/DSAureli/rihog/issues"
+
+[tool.hatch.build.targets.sdist]
+include = [
+	"/res",
+	"/rihog"
+]
+
+[tool.pytest.ini_options]
+testpaths = [
+	"rihog",
+]
