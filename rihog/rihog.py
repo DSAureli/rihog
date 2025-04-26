@@ -63,18 +63,18 @@ class RIHOGBase(ABC):
 	):
 		assert isinstance(nbhd_steps, int) and nbhd_steps > 0, "'nbhd_steps' must be a positive integer"
 		assert isinstance(num_bins, int) and num_bins > 0, "`num_bins` must be a positive integer"
-		assert nbhd_shape in NeighborhoodShape, f"'nbhd_mode' must be one of {list(map(str, NeighborhoodShape))}"
+		assert nbhd_shape in NeighborhoodShape, f"'nbhd_shape' must be one of {list(map(str, NeighborhoodShape))}"
 		assert rel_magn_mode in RelativeMagnitudeMode, f"'rel_magn_mode' must be one of {list(map(str, RelativeMagnitudeMode))}"
 		self.nbhd_steps = nbhd_steps
 		self.num_bins = num_bins
-		self.nbhd_mode = nbhd_shape
+		self.nbhd_shape = nbhd_shape
 		self.rel_magn_mode = rel_magn_mode
 	
 	def __repr__(self):
 		return f"{self.__class__.__name__}(\n" \
 			f"    nbhd_steps={self.nbhd_steps!r},\n" \
 			f"    num_bins={self.num_bins!r},\n" \
-			f"    nbhd_mode={self.nbhd_mode.value!r},\n" \
+			f"    nbhd_shape={self.nbhd_shape.value!r},\n" \
 			f"    rel_magn_mode={self.rel_magn_mode.value!r}\n" \
 			")"
 	
@@ -119,7 +119,7 @@ class RIHOGBase(ABC):
 		## compute neighborhoods masks
 		WS = self.window_size  # window size
 		assert IH >= WS and IW >= WS, "spatial dimensions of input batch must be of equal or larger size than the largest neighborhood window"
-		nbhd_masks = _get_nbhd_masks(win_size=WS, shape=self.nbhd_mode)  # (nc ws ws)
+		nbhd_masks = _get_nbhd_masks(win_size=WS, shape=self.nbhd_shape)  # (nc ws ws)
 		NC = nbhd_masks.shape[-3]  # neighborhoods count
 		## compute windowed gradient
 		b_grad = _get_batch_grad(batch)  # (ib ig ih iw)

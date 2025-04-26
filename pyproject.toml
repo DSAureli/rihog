@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "rihog"
-version = "1.0"
+version = "1.0.1"
 authors = [
 	{name="Davide Nanni"}
 ]
-description = "Vectorized PyTorch implementation of the Rotation Invariant Histogram of Oriented Gradients."
+description = "Vectorized PyTorch implementation of Rotation Invariant Histogram of Oriented Gradients."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
